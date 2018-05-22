@@ -1,0 +1,96 @@
+  <!DOCTYPE html>
+<html>
+  <head
+    <meta charset="utf-8">
+    <title></title>
+  </head>Set to true, if an element's value is valid.
+  <body>
+    <h2>Personal Information</h2>
+    <form action="" id="clear" name="myForm" onsubmit="return(validate());" method="post">
+      <p class="">Enter name*:
+        <input type="text" name="Name" >
+      </p>
+      <p class="" name="Sex">Sex*:
+          <input type="radio" name="Male">Mane
+          <input type="radio" name="Falme">Flame
+      </p>
+      <p class="" >Enter email address*:
+        <input type="text" name="Email">
+      </p>
+      <p class="">Enter birthday (MM/DD/YYYY)*:
+        <input type="text" name="Birthday">
+      </p>Enter street address(line 1)*:
+        <input type="text" name="Add">
+      <p class="">Enter city*:
+        <input type="text" name="City">
+      </p>
+      <p>Select a region*:
+        <input type="text" name="Region">
+      </p>
+      <p class="">Enter 5-digit ZIP code*:
+        <input type="text" name="Code">
+      </p>
+      <input type="submit" value="Fsubmit">
+      <button type="button" name="button" onclick="myFunction()">Clear</button>
+    </form>
+    <script>
+    function myFunction() {
+        document.getElementById("clear").reset();
+    };
+    function validateForm() {
+        if (document.myForm.Name.value == "") {
+            alert( "Please enter your name!!!" );
+            document.myForm.Name.focus();
+            return false;
+        // }if (documen.myForm.Male.value == "" || document.myForm.Falme.value == "") {
+        //     alert( "Please enter your Sex!!!" );
+        //     document.myForm.Sex.focus();
+        //     return false;
+        }if (document.myForm.Email.value == "") {
+            alert( "Please enter your Email!!!" );
+            document.myForm.Email.focus();
+            return false;
+        }if (document.myForm.Birthday.value == "") {
+            alert( "Please enter your birthday!!!" );
+            document.myForm.Birthday.focus();
+            return false;
+        }if (document.myForm.Add.value == "") {
+            alert( "Please anter your address" );
+            document.myForm.Add.focus();
+            return false;
+        }if (document.myForm.City.value == "") {
+            alert( "Please anter your city" );
+            document.myForm.City.focus();
+            return false;
+        }if (document.myForm.Region.value == "") {
+            alert( "Please anter your region" );
+            document.myForm.Region.focus();
+            return false;
+        }if ( document.myForm.Code.value == "" ||
+         isNaN( document.myForm.Code.value ) ||
+         document.myForm.Code.value.length != 5 )
+         {
+            alert( "Please provide a zip in the format #####." );
+            document.myForm.Zip.focus() ;
+            return false;
+         }
+        return (true);
+    };
+
+
+    function validateEmail() {
+      var emailID = document.myForm.Email.value;
+       atpos = emailID.indexOf("@");
+       dotpos = emailID.lastIndexOf(".");
+       if (atpos < 1 || ( dotpos - atpos < 2 ))
+       {
+          alert("Please enter correct email ID");
+          document.myForm.EMail.focus() ;
+          return false;
+       }
+       return (true);
+
+  };
+    </script>
+  </body>
+</html>
